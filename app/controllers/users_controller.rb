@@ -40,6 +40,10 @@ class UsersController < ApplicationController
       redirect to '/signup'
     end
   end
+  
+  get '/show' do
+    @user = User.find_by
+  
 
   get '/logout' do
     if logged_in?
