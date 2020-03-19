@@ -42,7 +42,9 @@ class UsersController < ApplicationController
   end
   
   get '/show' do
-    @user = User.find_by
+    @user = User.find(session[:user_id])
+    erb :'/show'
+  end
   
 
   get '/logout' do
