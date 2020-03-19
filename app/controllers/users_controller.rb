@@ -35,17 +35,11 @@ class UsersController < ApplicationController
     user = User.find_by(:username => params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect to '/tweets'
+      redirect to "/tweets"
     else
       redirect to '/signup'
     end
   end
-  
-  get '/show' do
-    @user = User.find(session[:user_id])
-    erb :'/show'
-  end
-  
 
   get '/logout' do
     if logged_in?
